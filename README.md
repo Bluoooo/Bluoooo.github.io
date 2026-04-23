@@ -1,2 +1,2 @@
-# github.io
+# ziqizhao.github.io
 My personal website
