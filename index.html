@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Basic Interesting Alpaca</title>
+    <meta property="og:title" content="Basic Interesting Alpaca" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 1rem;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: undefined;
+        text-transform: undefined;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+        color: var(--color-on-surface);
+        background: var(--color-surface);
+
+        fill: var(--color-on-surface);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="about-me-container1">
+        <navigation-wrapper class="navigation-wrapper">
+          <!--Navigation component-->
+          <div id="Navigation" class="navigation-container1">
+            <nav class="navigation-container">
+              <div class="navigation-content">
+                <a href="home.html">
+                  <div class="navigation-brand">
+                    <span class="section-title">ZIQIZHAO.COM</span>
+                  </div>
+                </a>
+                <div class="navigation-desktop-menu">
+                  <a href="index.html">
+                    <div class="navigation-link"><span>About Me</span></div>
+                  </a>
+                  <a href="Academic">
+                    <div class="navigation-link"><span>Academic</span></div>
+                  </a>
+                  <a href="Business">
+                    <div class="navigation-link"><span>Business</span></div>
+                  </a>
+                  <a href="Pinkly Blue">
+                    <div class="navigation-link-blog navigation-link">
+                      <span>Pinkly Blue (Blog)</span>
+                    </div>
+                  </a>
+                </div>
+                <button
+                  id="navToggle"
+                  aria-label="Toggle Menu"
+                  aria-expanded="false"
+                  class="navigation-toggle"
+                >
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="navigation-icon-menu"
+                  >
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+            </nav>
+            <div id="mobileOverlay" class="navigation-mobile-overlay">
+              <div class="navigation-overlay-header">
+                <a href="home.html">
+                  <div class="navigation-brand">
+                    <span class="section-title">Pinkly Blue</span>
+                  </div>
+                </a>
+                <button
+                  id="navClose"
+                  aria-label="Close Menu"
+                  class="navigation-close"
+                >
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="navigation-icon-close"
+                  >
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="navigation-overlay-links">
+                <a href="index.html">
+                  <div class="navigation-overlay-link">
+                    <span>About Me</span>
+                  </div>
+                </a>
+                <a href="Academic">
+                  <div class="navigation-overlay-link">
+                    <span>Academic</span>
+                  </div>
+                </a>
+                <a href="Business">
+                  <div class="navigation-overlay-link">
+                    <span>Business</span>
+                  </div>
+                </a>
+                <a href="Pinkly Blue">
+                  <div class="navigation-link-blog navigation-overlay-link">
+                    <span>Pinkly Blue (Blog)</span>
+                  </div>
+                </a>
+              </div>
+              <div class="navigation-overlay-footer">
+                <p class="section-content">Ziqi "Stephen" Zhao</p>
+                <div class="navigation-social-minimal">
+                  <span class="section-content">Personal Portfolio 2026</span>
+                </div>
+              </div>
+            </div>
+            <div class="navigation-container2">
+              <div class="navigation-container3">
+                <style>
+                  @media (prefers-reduced-motion: reduce) {
+                  .navigation-mobile-overlay {
+                    transition: none;
+                  }
+                  .navigation-link, .navigation-overlay-link, .navigation-brand {
+                    transition: none;
+                  }
+                  }
+                </style>
+              </div>
+            </div>
+            <div class="navigation-container4">
+              <div class="navigation-container5">
+                <script defer="" data-name="navigation-logic">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const navToggle = document.getElementById("navToggle")
+                      const navClose = document.getElementById("navClose")
+                      const mobileOverlay = document.getElementById("mobileOverlay")
+                      const overlayLinks = document.querySelectorAll(".navigation-overlay-link")
+
+                      const openMenu = () => {
+                        mobileOverlay.classList.add("is-active")
+                        navToggle.setAttribute("aria-expanded", "true")
+                        document.body.style.overflow = "hidden"
+                      }
+
+                      const closeMenu = () => {
+                        mobileOverlay.classList.remove("is-active")
+                        navToggle.setAttribute("aria-expanded", "false")
+                        document.body.style.overflow = ""
+                      }
+
+                      navToggle.addEventListener("click", openMenu)
+                      navClose.addEventListener("click", closeMenu)
+
+                      overlayLinks.forEach((link) => {
+                        link.addEventListener("click", closeMenu)
+                      })
+
+                      window.addEventListener("keydown", (e) => {
+                        if (e.key === "Escape" && mobileOverlay.classList.contains("is-active")) {
+                          closeMenu()
+                        }
+                      })
+
+                      let lastScroll = 0
+                      const nav = document.querySelector(".navigation-container")
+
+                      window.addEventListener("scroll", () => {
+                        const currentScroll = window.pageYOffset
+
+                        if (currentScroll <= 0) {
+                          nav.style.boxShadow = "none"
+                          return
+                        }
+
+                        if (currentScroll > 50) {
+                          nav.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.05)"
+                        } else {
+                          nav.style.boxShadow = "none"
+                        }
+
+                        lastScroll = currentScroll
+                      })
+                    })()
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </navigation-wrapper>
+        <headline-wrapper class="headline-wrapper">
+          <!--Headline component-->
+          <section class="headline-thq-hero-typewriter-elm hero-typewriter">
+            <div class="hero-typewriter__diagonal-bg"></div>
+            <div class="hero-typewriter__container">
+              <div class="hero-typewriter__content">
+                <h1 class="hero-title">
+                  <span>Hi, I am Ziqi, a</span>
+                  <span
+                    id="typewriter-text"
+                    class="headline-thq-hero-typewriterdynamic-elm"
+                  ></span>
+                </h1>
+                <p class="hero-subtitle">
+                  Day Dreamer, Hamburger Eater, and Garbage Creator;
+                </p>
+                <p class="hero-subtitle">
+                  Busy doing nothing, accomplishing even less.
+                </p>
+                <div class="hero-typewriter__cta-group">
+                  <a href="#typewriter-text">
+                    <div class="btn btn-outline">
+                      <span>View Portfolio</span>
+                    </div>
+                  </a>
+                  <a href="#Footer">
+                    <div class="btn btn-primary">
+                      <span>Discover My Story</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="hero-typewriter__visual">
+                <img
+                  alt="Pastel dawn sky"
+                  src="https://images.pexels.com/photos/2962030/pexels-photo-2962030.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                  class="hero-typewriter__image"
+                />
+              </div>
+            </div>
+          </section>
+        </headline-wrapper>
+        <personal-bio-wrapper class="personal-bio-wrapper">
+          <!--PersonalBio component-->
+          <section
+            id="bio"
+            class="personal-bio-thq-personal-bio-elm personal-bio"
+          >
+            <div class="personal-bio__container">
+              <div class="personal-bio__grid">
+                <aside class="personal-bio__sidebar">
+                  <div class="personal-bio__avatar-wrapper">
+                    <img
+                      alt="Ziqi Stephen Zhao"
+                      src="https://images.pexels.com/photos/19017586/pexels-photo-19017586.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200"
+                      class="personal-bio__avatar"
+                    />
+                  </div>
+                  <div class="personal-bio__meta">
+                    <h2 class="section-title">Stephen</h2>
+                    <h2 class="section-title">Ziqi&nbsp; Zhao</h2>
+                    <p class="section-content">PM, Essayist, entrepreneur</p>
+                    <div class="personal-bio__socials">
+                      <a href="#">
+                        <div
+                          aria-label="LinkedIn"
+                          class="personal-bio__icon-link"
+                        >
+                          <svg
+                            fill="none"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                            <path
+                              d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2"
+                            ></path>
+                            <path
+                              d="M11 12.5a1.5 1.5 0 0 0-3 0v3a1.5 1.5 0 0 0 3 0m2-4.5l1.5 6l1.5-6"
+                            ></path>
+                          </svg>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          aria-label="GitHub"
+                          class="personal-bio__icon-link"
+                        >
+                          <svg
+                            fill="none"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path
+                              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                            ></path>
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </aside>
+                <main class="personal-bio__content">
+                  <div class="personal-bio__divider"></div>
+                  <h2 class="section-title">About ME!</h2>
+                  <p class="section-content">
+                    <span>
+                      Hi there! This is Ziqi ZHAO, and you can also call me
+                      Stephen. Currently, I am a year-4 student at the School of
+                      Data Science,&nbsp; the Chinese University of Hong&nbsp;
+                      Kong, Shenzhen (CUHKSZ), majoring in Data Science and Big
+                      Data Technology.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      My research interests lie in time series data forecasting,
+                      financial data analysis, and AI applications in
+                      cloud-native governance fields. I am also an enthusiastic
+                      fan of San Antonio Spurs and Manchester City.&nbsp;
+                    </span>
+                    <br />
+                  </p>
+                  <div class="personal-bio__values">
+                    <div class="personal-bio__value-card">
+                      <h3 class="section-subtitle">Insight</h3>
+                      <p class="section-content">
+                        Find the story beyond the data. User's journey is the
+                        soul of every project I touch
+                      </p>
+                    </div>
+                    <div class="personal-bio__value-card">
+                      <h3 class="section-subtitle">Creation</h3>
+                      <p class="section-content">
+                        Dare to reinvent the ordinary, shattering abstract
+                        constraints to build bold, original digital experiences.
+                      </p>
+                    </div>
+                    <div class="personal-bio__value-card">
+                      <h3 class="section-subtitle">Growth</h3>
+                      <p class="section-content">
+                        Perpetually in beta...A lifelong voyager, navigating and
+                        evolving within the ever-shifting trends.
+                      </p>
+                    </div>
+                  </div>
+                </main>
+              </div>
+            </div>
+          </section>
+        </personal-bio-wrapper>
+        <experience-timeline-wrapper class="experience-timeline-wrapper">
+          <!--ExperienceTimeline component-->
+          <section
+            class="experience-timeline-thq-experience-timeline-elm experience-timeline"
+          >
+            <div class="experience-timeline__container">
+              <h2 class="section-title">Journey &amp; Milestones</h2>
+              <div class="experience-timeline__wrapper">
+                <div class="experience-timeline__line"></div>
+                <div
+                  class="experience-timeline__item experience-timeline__item--left"
+                >
+                  <div class="experience-timeline__marker"></div>
+                  <div class="experience-timeline__card">
+                    <span class="experience-timeline__date">Upcoming</span>
+                    <h3 class="section-subtitle">
+                      Tencent Holdings&nbsp; Limited
+                    </h3>
+                    <p class="section-content">
+                      Exploring the workplace as a product manager and trying my
+                      best to create value bravely and strongly.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="experience-timeline__item experience-timeline__item--right"
+                >
+                  <div class="experience-timeline__marker"></div>
+                  <div class="experience-timeline__card">
+                    <span class="experience-timeline__date">2022-2026</span>
+                    <h3 class="section-subtitle">
+                      Chinese University of Hong Kong,&nbsp; Shenzhen
+                    </h3>
+                    <p class="section-content">
+                      A student at the School of Data Science, majoring in Data
+                      Science and Big Data Technology, ranking top 20%.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="experience-timeline__item experience-timeline__item--left"
+                >
+                  <div class="experience-timeline__marker"></div>
+                  <div class="experience-timeline__card">
+                    <span class="experience-timeline__date">2004-2022</span>
+                    <h3 class="section-subtitle">Growing Up</h3>
+                    <p class="section-content">
+                      I had a very happy, fulfilling and meaningful childhood at
+                      Ningbo, a very beautiful coastal city in the east part of
+                      Zhejiang Province
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </experience-timeline-wrapper>
+        <skills-approach-wrapper class="skills-approach-wrapper">
+          <!--SkillsApproach component-->
+          <section
+            class="skills-approach-thq-skills-approach-elm skills-approach"
+          >
+            <div class="skills-approach__container">
+              <h2 class="skills-approach-thq-section-title-elm section-title">
+                Works &amp; Projects
+              </h2>
+              <div
+                class="skills-approach-thq-skills-approachcell-elm1 skills-approach__cell skills-approach__cell--accent"
+              >
+                <h3
+                  class="skills-approach-thq-section-subtitle-elm1 section-subtitle"
+                >
+                  PRD &amp; Business Plan : COLORMOOD —&nbsp; Capturing the Hues
+                  of Existence
+                </h3>
+                <p class="section-content">
+                  In an era of information overload, ColorMood serves as a
+                  visual diary that bridges the gap between abstract feelings
+                  and aesthetic clarity. With its unique "One Photo, One
+                  Palette" philosophy, it transforms everyday randomness into a
+                  curated museum of personal moods, helping users find their own
+                  "base color" and connect with those who resonate on the same
+                  frequency.
+                </p>
+              </div>
+              <div
+                class="skills-approach-thq-skills-approachcell-elm2 skills-approach__cell skills-approach__cell--accent"
+              >
+                <h3
+                  class="skills-approach-thq-section-subtitle-elm2 section-subtitle"
+                >
+                  Business Plan : PurrCircle — Community-Based Pet Mutual
+                  Assistance&nbsp;&nbsp;
+                </h3>
+                <p class="section-content">
+                  <span class="skills-approach-text10">
+                    TOGETHER WITH YASI YANG, YIXUAN ZHOU, WANRU YAN in course
+                    IDE2000
+                  </span>
+                  <br />
+                  <span>
+                    PurrCircle is a hyper-local pet care platform that solves
+                    the "travel anxiety" of 80 million urban pet owners in
+                    China. By activating community trust through a dual-track
+                    model, it connects owners with verified neighborhood helpers
+                    for affordable, in-home care.
+                  </span>
+                </p>
+              </div>
+              <div
+                class="skills-approach-thq-skills-approachcell-elm3 skills-approach__cell skills-approach__cell--accent"
+              >
+                <h3
+                  class="skills-approach-thq-section-subtitle-elm3 section-subtitle"
+                >
+                  Project: PurrCircle — Dynamic Gesture Recognition：A Novel
+                  Approach for CAPTCHA&nbsp;&nbsp;
+                </h3>
+                <p class="section-content">
+                  <span class="skills-approach-text13">
+                    TOGETHER WITH ZHIYUAN YANG, Shengxi Xiong
+                  </span>
+                  <br />
+                  <span>
+                    A next-generation authentication system that replaces
+                    traditional methods with real-time hand gesture recognition.
+                    Powered by a custom CNN with Residual and SE blocks, the
+                    system achieved 99.7% accuracy across 13,000+ self-made
+                    samples, successfully bridging high-performance Computer
+                    Vision with frictionless user cybersecurity.
+                  </span>
+                </p>
+              </div>
+              <div
+                class="skills-approach-thq-skills-approachcell-elm4 skills-approach__cell skills-approach__cell--accent"
+              >
+                <h3
+                  class="skills-approach-thq-section-subtitle-elm4 section-subtitle"
+                >
+                  Publication: An Optimized Port Operation Efficiency Prediction
+                  Model Based on LSTM and ESN&nbsp;&nbsp;
+                </h3>
+                <p class="section-content">
+                  <span>Xinxin Liu, Ruixiang Mei,</span>
+                  <span class="skills-approach-text17">Ziqi Zhao</span>
+                  <span>, Shaohan Wang, Junli Duan*</span>
+                  <br />
+                  <span>
+                    This paper introduces a high-precision dual-model framework
+                    to predict smart port operation efficiency, addressing the
+                    challenges of nonlinear dynamics and noisy multi-scale data.
+                    By integrating CEEMDAN for signal decomposition with a
+                    lightweight Echo State Network (ESN) and a Bidirectional
+                    Attention-Enhanced LSTM (Bi-ALSTM), the system achieves a
+                    significant leap in temporal modeling. Experimental results
+                    demonstrate a 30.5% reduction in MSE compared to traditional
+                    RNNs, while maintaining a real-time training speed of just
+                    0.35 seconds, providing a robust quantitative tool for
+                    dynamic scheduling and risk early warning in global supply
+                    chains.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </section>
+        </skills-approach-wrapper>
+        <selected-projects-wrapper class="selected-projects-wrapper">
+          <!--SelectedProjects component-->
+          <section
+            id="projects"
+            class="selected-projects-thq-selected-projects-elm selected-projects"
+          >
+            <div class="selected-projects__container">
+              <div class="selected-projects__header">
+                <h2 class="section-title">Portfolio Highlights</h2>
+              </div>
+              <div class="selected-projects__bento">
+                <article
+                  class="selected-projects__card--large selected-projects__card"
+                >
+                  <img
+                    alt="Project Alpha"
+                    src="https://images.pexels.com/photos/12198920/pexels-photo-12198920.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                    class="selected-projects__img"
+                  />
+                  <div class="selected-projects__overlay">
+                    <h3 class="section-subtitle">Project Pinkly-Blue</h3>
+                    <p class="section-content">
+                      A cross-disciplinary exploration of dawn-themed interface
+                      design.
+                    </p>
+                    <a href="#">
+                      <div class="btn-sm btn btn-accent">
+                        <span>View Case Study</span>
+                      </div>
+                    </a>
+                  </div>
+                </article>
+                <article class="selected-projects__card">
+                  <img
+                    alt="Project Beta"
+                    src="https://images.pexels.com/photos/11523785/pexels-photo-11523785.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                    class="selected-projects__img"
+                  />
+                  <div class="selected-projects__overlay">
+                    <h3 class="section-subtitle">Azure Analytics</h3>
+                    <p class="section-content">
+                      Data visualization for modern enterprises.
+                    </p>
+                  </div>
+                </article>
+                <article class="selected-projects__card">
+                  <img
+                    alt="Project Gamma"
+                    src="https://images.pexels.com/photos/31083361/pexels-photo-31083361.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
+                    class="selected-projects__img"
+                  />
+                  <div class="selected-projects__overlay">
+                    <h3 class="section-subtitle">Pastel Portal</h3>
+                    <p class="section-content">
+                      Minimalist e-commerce framework.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+        </selected-projects-wrapper>
+        <footer-wrapper class="footer-wrapper">
+          <!--Footer component-->
+          <div id="Footer" class="footer-container1">
+            <footer class="footer-root">
+              <div aria-hidden="true" class="footer-wave-container">
+                <svg
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1440 120"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0 120V48.1543C116.33 17.5833 268.333 4.22731 480 34.0909C797.5 78.8864 1042.5 -10.8523 1440 4.22727V120H0Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <div class="footer-main-wrapper">
+                <div class="footer-content-container">
+                  <div class="footer-grid">
+                    <div class="footer-brand-column">
+                      <div class="footer-logo-wrapper">
+                        <span class="footer-logo-text">ZIQIZHAO.COM</span>
+                      </div>
+                      <p class="section-content footer-description">
+                        "Life as it happens is the scenery; embrace the flux and
+                        serendipity of being."
+                      </p>
+                    </div>
+                    <div class="footer-nav-column">
+                      <h3 class="footer-nav-title section-subtitle">
+                        Navigation
+                      </h3>
+                      <ul class="footer-nav-list">
+                        <li>
+                          <a href="index.html">
+                            <div class="footer-nav-link">
+                              <span>About Me</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <div class="footer-nav-link">
+                              <span>Academic</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <div class="footer-nav-link">
+                              <span>Business</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <div class="footer-nav-link">
+                              <span>Pinkly Blue Blog</span>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                      <h3 class="footer-nav-title section-subtitle">Contact</h3>
+                      <ul class="footer-nav-list">
+                        <li class="footer-contact-item">
+                          <svg
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            class="footer-contact-icon"
+                          >
+                            <g
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                              ></path>
+                              <rect
+                                x="2"
+                                y="4"
+                                rx="2"
+                                width="20"
+                                height="16"
+                              ></rect>
+                            </g>
+                          </svg>
+                          <a href="mailto:hello@stephenzhao.com?subject=">
+                            <div class="footer-nav-link">
+                              <span>122090793@link.cuhk.edu.cn</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="footer-contact-item"></li>
+                        <li class="footer-contact-item">
+                          <svg
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            class="footer-contact-icon"
+                          >
+                            <path
+                              d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 7c-1.5 2-3 5-3 5s-1.5-3-3-5c-1.81-2.53-3-4.62-3-7a7 7 0 0 1 7-7"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                            <circle
+                              r="2.5"
+                              cx="12"
+                              cy="9"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></circle>
+                          </svg>
+                          <a href="#">
+                            <div
+                              class="footer-thq-footer-nav-link-elm6 footer-nav-link"
+                            >
+                              <span>Shenzhen; Ningbo, China</span>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="footer-newsletter-column">
+                      <h3 class="footer-nav-title section-subtitle">
+                        Last Updated
+                      </h3>
+                      <p class="section-content footer-newsletter-text">
+                        April 24th, 2026
+                      </p>
+                      <form
+                        action="/subscribe"
+                        method="POST"
+                        data-form-id="ff49a331-24ba-4e83-8c92-42d858925cae"
+                        class="footer-newsletter-form"
+                      >
+                        <div class="footer-input-group">
+                          <input
+                            type="text"
+                            id="thq_textinput_5IUj"
+                            name="textinput"
+                            required="true"
+                            aria-label="Email address"
+                            placeholder="Anything to me"
+                            data-form-field-id="thq_textinput_5IUj"
+                            class="footer-input"
+                          />
+                          <button
+                            id="thq_button_NwTq"
+                            name="button"
+                            type="submit"
+                            data-form-field-id="thq_button_NwTq"
+                            class="btn-sm btn footer-submit-btn btn-primary"
+                          >
+                            <span>Send</span>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <div class="footer-container2">
+              <div class="footer-container3">
+                <script defer="" data-name="footer-logic">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      // Handle newsletter form submission feedback
+                      const footerForm = document.querySelector(".footer-newsletter-form")
+                      if (footerForm) {
+                        footerForm.addEventListener("submit", (e) => {
+                          // Logic for showing success state
+                          const input = footerForm.querySelector(".footer-input")
+                          const btn = footerForm.querySelector(".footer-submit-btn")
+
+                          if (input.checkValidity()) {
+                            const originalText = btn.innerHTML
+                            btn.innerHTML = "Subscribed!"
+                            btn.style.backgroundColor = "#2ecc71"
+                            btn.style.borderColor = "#2ecc71"
+                            input.value = ""
+                            input.disabled = true
+
+                            setTimeout(() => {
+                              btn.innerHTML = originalText
+                              btn.style.backgroundColor = ""
+                              btn.style.borderColor = ""
+                              input.disabled = false
+                            }, 3000)
+                          }
+                        })
+                      }
+                    })()
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </footer-wrapper>
+        <a href="https://play.teleporthq.io/signup">
+          <div aria-label="Sign up to TeleportHQ" class="about-me-container2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 19 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="about-me-icon1"
+            >
+              <path
+                d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
+                fill="#B23ADE"
+              ></path>
+              <path
+                d="M10.9733 12.7878C14.4208 12.7878 17.2156 10.0706 17.2156 6.71886C17.2156 3.3671 14.4208 0.649963 10.9733 0.649963C7.52573 0.649963 4.73096 3.3671 4.73096 6.71886C4.73096 10.0706 7.52573 12.7878 10.9733 12.7878Z"
+                fill="#FF5C5C"
+              ></path>
+              <path
+                d="M17.7373 13.3654C19.1497 14.1588 19.1497 15.4634 17.7373 16.2493L10.0865 20.5387C8.67402 21.332 7.51855 20.6836 7.51855 19.0968V10.5141C7.51855 8.92916 8.67402 8.2807 10.0865 9.07221L17.7373 13.3654Z"
+                fill="#2874DE"
+              ></path>
+            </svg>
+            <span class="about-me-text">Built in TeleportHQ</span>
+          </div>
+        </a>
+      </div>
+      <link
+        rel="canonical"
+        href="https://basic-interesting-alpaca-injnxe.teleporthq.app/"
+      />
+    </div>
+  </body>
+</html>

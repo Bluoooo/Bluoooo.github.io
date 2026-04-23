@@ -1,0 +1,185 @@
+.navigation-wrapper {
+  display: contents;
+}
+ 
+.navigation-container1 {
+  display: contents;
+}
+ 
+.navigation-container2 {
+  display: none;
+}
+ 
+.navigation-container3 {
+  display: contents;
+}
+ 
+.navigation-container4 {
+  display: none;
+}
+ 
+.navigation-container5 {
+  display: contents;
+}
+
+.headline-wrapper {
+  display: contents;
+}
+ 
+.headline-thq-hero-typewriter-elm {
+  position: relative;
+}
+ 
+.headline-thq-hero-typewriterdynamic-elm {
+  color: #8ec5fc;
+  border-right: 3px solid #8ec5fc;
+  padding-right: 4px;
+}
+
+.personal-bio-wrapper {
+  display: contents;
+}
+ 
+.personal-bio-thq-personal-bio-elm {
+  width: 1139px;
+  position: relative;
+}
+
+.experience-timeline-wrapper {
+  display: contents;
+}
+ 
+.experience-timeline-thq-experience-timeline-elm {
+  position: relative;
+}
+
+.skills-approach-wrapper {
+  display: contents;
+}
+ 
+.skills-approach-thq-skills-approach-elm {
+  position: relative;
+}
+ 
+.skills-approach-thq-section-title-elm {
+  height: 84px;
+}
+ 
+.skills-approach-thq-skills-approachcell-elm1 {
+  width: 1112px;
+  height: 194px;
+}
+ 
+.skills-approach-thq-section-subtitle-elm1 {
+  color: var(--color-on-primary);
+  font-size: 28px;
+}
+ 
+.skills-approach-thq-skills-approachcell-elm2 {
+  width: 1112px;
+  height: 194px;
+  margin-top: var(--spacing-xl);
+}
+ 
+.skills-approach-thq-section-subtitle-elm2 {
+  font-size: 28px;
+}
+ 
+.skills-approach-text10 {
+  text-decoration: underline;
+}
+ 
+.skills-approach-thq-skills-approachcell-elm3 {
+  width: 1112px;
+  height: 232px;
+  background: var(--color-secondary);
+  margin-top: var(--spacing-xl);
+}
+ 
+.skills-approach-thq-section-subtitle-elm3 {
+  font-size: 28px;
+}
+ 
+.skills-approach-text13 {
+  text-decoration: underline;
+}
+ 
+.skills-approach-thq-skills-approachcell-elm4 {
+  width: 1112px;
+  height: 306px;
+  background: var(--color-on-surface-secondary);
+  margin-top: var(--spacing-xl);
+}
+ 
+.skills-approach-thq-section-subtitle-elm4 {
+  font-size: 28px;
+}
+ 
+.skills-approach-text17 {
+  font-family: "Arial Black";
+}
+
+.selected-projects-wrapper {
+  display: contents;
+}
+ 
+.selected-projects-thq-selected-projects-elm {
+  position: relative;
+}
+
+.footer-wrapper {
+  display: contents;
+}
+ 
+.footer-container1 {
+  display: contents;
+}
+ 
+.footer-thq-footer-nav-link-elm6 {
+  text-decoration: none;
+}
+ 
+.footer-container2 {
+  display: none;
+}
+ 
+.footer-container3 {
+  display: contents;
+}
+
+.about-me-container1 {
+  width: 100%;
+  min-height: 100vh;
+}
+ 
+.about-me-container2 {
+  right: 50px;
+  border: 1px solid #ffffff5c;
+  bottom: 30px;
+  display: flex;
+  z-index: 22;
+  position: fixed;
+  box-shadow: 5px 5px 10px 0px rgba(31, 31, 31, 0.4);
+  min-height: auto;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  border-radius: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  backdrop-filter: blur(6px);
+  background-color: rgba(41, 41, 41, 0.41);
+}
+ 
+.about-me-icon1 {
+  width: 24px;
+  margin-right: 4px;
+}
+ 
+.about-me-text {
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
