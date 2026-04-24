@@ -855,5 +855,16 @@
         href="https://basic-interesting-alpaca-injnxe.teleporthq.app/"
       />
     </div>
+    <script src='https://unpkg.com/@teleporthq/teleport-custom-scripts'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const flipCard = document.querySelector('.personal-bio__avatar-wrapper.flip-card');
+        if (flipCard) {
+          flipCard.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+          });
+        }
+      });
+    </script>
   </body>
 </html>
