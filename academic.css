@@ -176,6 +176,15 @@
   color: #666;
 }
 
+.footer-brand-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+
 @media (max-width: 768px) {
   .academic-hero h1 {
     font-size: 2rem;
