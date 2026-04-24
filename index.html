@@ -286,11 +286,16 @@
             <div class="personal-bio__container">
               <div class="personal-bio__grid">
                 <aside class="personal-bio__sidebar">
-                  <div class="personal-bio__avatar-wrapper">
+                  <div class="personal-bio__avatar-wrapper personal-bio__avatar-flipper">
                     <img
                       alt="Ziqi Stephen Zhao"
                       src="assets/avatar.jpg"
-                      class="personal-bio__avatar"
+                      class="personal-bio__avatar personal-bio__avatar-front"
+                    />
+                    <img
+                      alt="Ziqi Zhao"
+                      src="assets/nick.jpg"
+                      class="personal-bio__avatar personal-bio__avatar-back"
                     />
                   </div>
                   <div class="personal-bio__meta">
@@ -768,10 +773,11 @@
                         April 24th, 2026
                       </p>
                       <form
-                        action="/subscribe"
+                        action="https://formspree.io/f/YOUR_FORM_ID"
                         method="POST"
                         data-form-id="ff49a331-24ba-4e83-8c92-42d858925cae"
                         class="footer-newsletter-form"
+                        id="footer-newsletter-form"
                       >
                         <div class="footer-input-group">
                           <input
@@ -802,6 +808,18 @@
             </footer>
             <div class="footer-container2">
               <div class="footer-container3">
+                <script defer="" data-name="avatar-flip">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const flipper = document.querySelector(".personal-bio__avatar-flipper")
+                      if (flipper) {
+                        flipper.addEventListener("click", function() {
+                          flipper.classList.toggle("is-flipped")
+                        })
+                      }
+                    })()
+                  });
+                </script>
                 <script defer="" data-name="footer-logic">
                   document.addEventListener('DOMContentLoaded', function() {
                     (function(){
@@ -833,6 +851,83 @@
                     })()
                   });
                 </script>
+                <script defer="" data-name="newsletter-popup">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const form = document.getElementById("footer-newsletter-form")
+                      const popup = document.getElementById("newsletter-success-popup")
+                      const popupClose = document.getElementById("popup-close")
+                      const popupOverlay = document.getElementById("popup-overlay")
+
+                      if (form && popup) {
+                        form.addEventListener("submit", async function(e) {
+                          e.preventDefault()
+                          const input = form.querySelector(".footer-input")
+                          const btn = form.querySelector(".footer-submit-btn")
+                          const originalText = btn.innerHTML
+
+                          if (!input.checkValidity()) {
+                            input.reportValidity()
+                            return
+                          }
+
+                          btn.innerHTML = '<span style="opacity:0.6">Sending...</span>'
+                          btn.style.backgroundColor = "var(--color-secondary)"
+                          btn.style.borderColor = "var(--color-secondary)"
+                          btn.disabled = true
+
+                          try {
+                            const formData = new FormData(form)
+                            const response = await fetch(form.action, {
+                              method: "POST",
+                              body: formData,
+                              headers: { Accept: "application/json" }
+                            })
+
+                            if (response.ok) {
+                              popup.classList.add("is-active")
+                              input.value = ""
+                            } else {
+                              btn.innerHTML = originalText
+                              btn.style.backgroundColor = ""
+                              btn.style.borderColor = ""
+                              btn.disabled = false
+                              alert("Oops! Something went wrong. Please try again.")
+                            }
+                          } catch (err) {
+                            btn.innerHTML = originalText
+                            btn.style.backgroundColor = ""
+                            btn.style.borderColor = ""
+                            btn.disabled = false
+                            alert("Oops! Something went wrong. Please try again.")
+                          }
+                        })
+
+                        const closePopup = () => {
+                          popup.classList.remove("is-active")
+                          const btn = form.querySelector(".footer-submit-btn")
+                          btn.innerHTML = '<span>Send</span>'
+                          btn.style.backgroundColor = ""
+                          btn.style.borderColor = ""
+                          btn.disabled = false
+                        }
+
+                        if (popupClose) popupClose.addEventListener("click", closePopup)
+                        if (popupOverlay) popupOverlay.addEventListener("click", closePopup)
+                      }
+                    })()
+                  });
+                </script>
+              </div>
+            </div>
+            <div id="newsletter-success-popup" class="newsletter-popup-overlay">
+              <div class="newsletter-popup-card">
+                <div class="newsletter-popup-header">
+                  <span class="newsletter-popup-icon">&#10004;</span>
+                  <h3 class="newsletter-popup-title">Message Sent!</h3>
+                </div>
+                <p class="newsletter-popup-message">Thank you for reaching out. I appreciate your message and will get back to you soon!</p>
+                <button id="popup-close" class="newsletter-popup-btn">Got it</button>
               </div>
             </div>
           </div>
