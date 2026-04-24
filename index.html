@@ -1202,9 +1202,11 @@
                           garbageText.textContent = randomGarbage
                           garbagePopup.classList.add("is-active")
                           
+                          const randomTime = Math.floor(Math.random() * (10411 - 3060 + 1)) + 3060;
+
                           setTimeout(() => {
-                            garbagePopup.classList.remove("is-active")
-                          }, 100411)
+                            garbagePopup.classList.remove("is-active");
+                          }, randomTime);
                         })
                       }
                     })()
