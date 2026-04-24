@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ziqi ZHAO| Humble, Content, Patient~</title>
-    <meta property="og:title" content="Ziqi ZHAO| Humble, Content, Patient~" />
+    <title>Ziqi ZHAO | Humble, Content, Patient~</title>
+    <meta property="og:title" content="Ziqi ZHAO | Humble, Content, Patient~" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -84,11 +84,6 @@
                   <a href="business.html">
                     <div class="navigation-link"><span>Business</span></div>
                   </a>
-                  <a href="javascript:void(0);" onclick="openWechatModal()">
-                    <div class="navigation-link-blog navigation-link">
-                      <span>Pinkly Blue (Blog)</span>
-                    </div>
-                  </a>
                 </div>
                 <button
                   id="navToggle"
@@ -155,11 +150,6 @@
                 <a href="business.html">
                   <div class="navigation-overlay-link">
                     <span>Business</span>
-                  </div>
-                </a>
-                <a href="javascript:void(0);" onclick="openWechatModal()">
-                  <div class="navigation-link-blog navigation-overlay-link">
-                    <span>Pinkly Blue (Blog)</span>
                   </div>
                 </a>
               </div>
@@ -299,7 +289,7 @@
                   <div class="personal-bio__avatar-wrapper">
                     <img
                       alt="Ziqi Stephen Zhao"
-                      src="https://images.pexels.com/photos/19017586/pexels-photo-19017586.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=200"
+                      src="assets/avatar.jpg"
                       class="personal-bio__avatar"
                     />
                   </div>
@@ -373,10 +363,12 @@
                     <br />
                     <br />
                     <span>
-                      My research interests lie in time series data forecasting,
-                      financial data analysis, and AI applications in
-                      cloud-native governance fields. I am also an enthusiastic
-                      fan of San Antonio Spurs and Manchester City.&nbsp;
+                      My research interests lie in time series data forecasting, 
+                      financial data analysis, and AI applications in cloud-native governance fields. 
+                      Outside of research, I am an enthusiastic fan of the San Antonio 
+                      Spurs and Manchester City. I also have a deep passion for music, 
+                      especially Rap and K-pop, with Jony J and 
+                      IU being my all-time favorite artists.&nbsp;
                     </span>
                     <br />
                   </p>
@@ -385,7 +377,7 @@
                       <h3 class="section-subtitle">Insight</h3>
                       <p class="section-content">
                         Find the story beyond the data. User's journey is the
-                        soul of every project I touch
+                        soul of every project I touch.
                       </p>
                     </div>
                     <div class="personal-bio__value-card">
@@ -458,7 +450,7 @@
                     <p class="section-content">
                       I had a very happy, fulfilling and meaningful childhood at
                       Ningbo, a very beautiful coastal city in the east part of
-                      Zhejiang Province
+                      Zhejiang Province.
                     </p>
                   </div>
                 </div>
@@ -692,13 +684,6 @@
                             </div>
                           </a>
                         </li>
-                        <li>
-                          <a href="javascript:void(0);" onclick="openWechatModal()">
-                            <div class="footer-nav-link">
-                              <span>Pinkly Blue Blog</span>
-                            </div>
-                          </a>
-                        </li>
                       </ul>
                     </div>
                     <div class="footer-nav-column">
@@ -859,24 +844,5 @@
         href="https://basic-interesting-alpaca-injnxe.teleporthq.app/"
       />
     </div>
-    <div id="wechatModal" class="wechat-modal">
-      <div class="wechat-modal-content">
-        <span class="wechat-modal-close">&times;</span>
-        <p class="wechat-modal-text">微信公众号搜索：<strong>粉蓝偶记</strong></p>
-      </div>
-    </div>
-    <script>
-      function openWechatModal() {
-        document.getElementById('wechatModal').style.display = 'flex';
-      }
-      document.querySelector('.wechat-modal-close').addEventListener('click', function() {
-        document.getElementById('wechatModal').style.display = 'none';
-      });
-      document.getElementById('wechatModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-          this.style.display = 'none';
-        }
-      });
-    </script>
   </body>
 </html>

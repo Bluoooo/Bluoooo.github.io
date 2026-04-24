@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Business - Basic Interesting Alpaca</title>
-    <meta property="og:title" content="Business - Basic Interesting Alpaca" />
+    <title>Business - ZIQIZHAO.COM</title>
+    <meta property="og:title" content="Business - ZIQIZHAO.COM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -83,11 +83,6 @@
                   <a href="business.html">
                     <div class="navigation-link"><span>Business</span></div>
                   </a>
-                  <a href="javascript:void(0);" onclick="openWechatModal()">
-                    <div class="navigation-link-blog navigation-link">
-                      <span>Pinkly Blue (Blog)</span>
-                    </div>
-                  </a>
                 </div>
                 <button
                   id="navToggle"
@@ -154,11 +149,6 @@
                 <a href="business.html">
                   <div class="navigation-overlay-link">
                     <span>Business</span>
-                  </div>
-                </a>
-                <a href="javascript:void(0);" onclick="openWechatModal()">
-                  <div class="navigation-link-blog navigation-overlay-link">
-                    <span>Pinkly Blue (Blog)</span>
                   </div>
                 </a>
               </div>
@@ -233,24 +223,5 @@
         </footer>
       </div>
     </div>
-    <div id="wechatModal" class="wechat-modal">
-      <div class="wechat-modal-content">
-        <span class="wechat-modal-close">&times;</span>
-        <p class="wechat-modal-text">微信公众号搜索：<strong>粉蓝偶记</strong></p>
-      </div>
-    </div>
-    <script>
-      function openWechatModal() {
-        document.getElementById('wechatModal').style.display = 'flex';
-      }
-      document.querySelector('.wechat-modal-close').addEventListener('click', function() {
-        document.getElementById('wechatModal').style.display = 'none';
-      });
-      document.getElementById('wechatModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-          this.style.display = 'none';
-        }
-      });
-    </script>
   </body>
 </html>
