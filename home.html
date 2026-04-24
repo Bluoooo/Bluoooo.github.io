@@ -1,73 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home - Basic Interesting Alpaca</title>
-    <meta property="og:title" content="Home - Basic Interesting Alpaca" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
+.navigation-wrapper {
+  display: contents;
+}
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 1rem;
-      }
+.navigation-container1 {
+  display: contents;
+}
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: undefined;
-        text-transform: undefined;
-        letter-spacing: 0.02em;
-        line-height: 1.6;
-        color: var(--color-on-surface);
-        background: var(--color-surface);
+.navigation-container {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
 
-        fill: var(--color-on-surface);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./home.css" rel="stylesheet" />
+.navigation-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-      <div class="home-container1">
-      <link
-        rel="canonical"
-        href="https://basic-interesting-alpaca-injnxe.teleporthq.app/home"
-      />
-    </div>
-  </body>
-</html>
+.navigation-brand {
+  cursor: pointer;
+}
+
+.navigation-desktop-menu {
+  gap: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-link {
+  color: #4b5563;
+  position: relative;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.navigation-link:hover {
+  color: #0f1724;
+}
+
+.navigation-container2 {
+  display: none;
+}
+
+.navigation-container3 {
+  display: contents;
+}
+
+.navigation-container4 {
+  display: none;
+}
+
+.navigation-container5 {
+  display: contents;
+}
+
+.business-container1 {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.business-hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.business-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.business-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.business-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.business-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.business-section h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.business-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+}
+
+.business-card h3 {
+  margin-bottom: 15px;
+  color: #f5576c;
+}
+
+.business-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.business-tag {
+  background: #f5576c;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.business-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.business-skill-item {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.business-skill-item h3 {
+  margin-bottom: 10px;
+  color: #f5576c;
+}
+
+.business-future {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.business-future p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+.business-footer {
+  padding: 40px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.footer-brand-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 768px) {
+  .business-hero h1 {
+    font-size: 2rem;
+  }
+
+  .business-hero p {
+    font-size: 1rem;
+  }
+
+  .business-section {
+    padding: 40px 20px;
+  }
+
+  .business-future {
+    padding: 25px;
+  }
+}
