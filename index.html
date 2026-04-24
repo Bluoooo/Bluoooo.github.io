@@ -28,6 +28,86 @@
 
         fill: var(--color-on-surface);
       }
+
+      /* Garbage Generator Styles */
+      .garbage-generator {
+        position: relative;
+        margin-top: 1rem;
+      }
+
+      .garbage-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .garbage-btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        transform: scale(1.1);
+      }
+
+      .footer-newsletter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .garbage-popup {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #a8d8ea;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 500px;
+        max-width: 90vw;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .garbage-text {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #333;
+        word-wrap: break-word;
+      }
+
+      .garbage-popup::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 8px;
+        border-style: solid;
+        border-color: #a8d8ea transparent transparent transparent;
+      }
+
+      .garbage-popup.is-active {
+        opacity: 1;
+        visibility: visible;
+        bottom: calc(100% + 10px);
+      }
+
+      .garbage-text {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #333;
+      }
+
+
     </style>
     <link
       rel="stylesheet"
@@ -765,12 +845,26 @@
                       </ul>
                     </div>
                     <div class="footer-newsletter-column">
-                      <h3 class="footer-nav-title section-subtitle">
-                        Last Updated
-                      </h3>
-                      <p class="section-content footer-newsletter-text">
-                        April 24th, 2026
-                      </p>
+                      <div class="footer-newsletter-header">
+                        <div>
+                          <h3 class="footer-nav-title section-subtitle">
+                            Last Updated
+                          </h3>
+                          <p class="section-content footer-newsletter-text">
+                            April 24th, 2026
+                          </p>
+                        </div>
+                        <div class="garbage-generator">
+                          <button id="garbageBtn" class="garbage-btn" aria-label="Generate garbage">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="24" height="24" fill="currentColor">
+                              <path d="M155.6 81.3C163 67 179.9 60.4 195 65.9L320 111.5L445 65.9C460.1 60.4 477 67 484.4 81.3L563.2 234.2C592 290 573.5 356.5 524.7 390.8L556 477L597 462C613.6 456 632 464.5 638 481.1C644 497.7 635.5 516.1 618.9 522.1C571.5 539.4 524.1 556.6 476.7 573.9C460.1 580 441.7 571.4 435.7 554.8C429.7 538.2 438.2 519.8 454.8 513.8L495.8 498.8L464.5 412.6C405.1 417.8 348.3 378.7 334.5 317.4L319.9 252.7L305.3 317.4C291.5 378.7 234.7 417.8 175.3 412.6L144 498.8L185 513.8C201.6 519.9 210.2 538.2 204.1 554.8C198 571.4 179.7 580 163.1 573.9C115.7 556.6 68.3 539.3 20.9 522.1C4.3 516-4.3 497.7 1.8 481.1C7.9 464.5 26.3 456 42.9 462L83.9 477L115.2 390.8C66.5 356.5 48.1 290 76.9 234.2L155.6 81.3zM199.6 135.7L172.4 188.5L261.6 221L274.7 163.1L199.6 135.7zM440.5 135.7L365.4 163.1L378.5 221L467.7 188.5L440.5 135.7z"/>
+                            </svg>
+                          </button>
+                          <div id="garbagePopup" class="garbage-popup">
+                            <p id="garbageText" class="garbage-text"></p>
+                          </div>
+                        </div>
+                      </div>
                       <form
                         action="https://formspree.io/f/YOUR_FORM_ID"
                         method="POST"
@@ -913,6 +1007,205 @@
 
                         if (popupClose) popupClose.addEventListener("click", closePopup)
                         if (popupOverlay) popupOverlay.addEventListener("click", closePopup)
+                      }
+                    })()
+                  });
+                </script>
+                <script defer="" data-name="garbage-generator">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const garbageBtn = document.getElementById("garbageBtn")
+                      const garbagePopup = document.getElementById("garbagePopup")
+                      const garbageText = document.getElementById("garbageText")
+
+                      const garbageArray = [
+                        "I LOVE MY LIL PIGGY!",
+                        "Today I created 200 lines of bugs. Great job!",
+                        "Hamburger intake +1. My diet is officially ruined.",
+                        "Spent 3 hours debugging, only to realize I had a typo.",
+                        "Forgot to save my code. Again.",
+                        "My code is like a box of chocolates - you never know what bug you're gonna get.",
+                        "Hamburger for breakfast, lunch, and dinner.",
+                        "Created a bug that only appears on full moons. I'm a wizard.",
+                        "Spent all day optimizing, only to make it slower.",
+                        "Hamburger count: 5. Step count: 12. I'm winning at life.",
+                        "Sent a color palette to my crush. They replied with 'Fine'. Is 'Fine' a shade of rejection?",
+                        "My bank account is also a time series: specifically, a downward trend with high volatility.",
+                        "Talked to a stray cat for 20 minutes today. It was the most productive meeting of my week.",
+                        "My social life is a 404 error. But at least the UI looks pretty.",
+                        "Listening to IU to heal the trauma caused by my own code.",
+                        "Trying to rap like Jony J, but I end up sounding like a broken printer.",
+                        "Invested in my future. The market crashed 5 minutes later.",
+                        "The only thing 'cloud-native' about me is that I always have my head in the clouds.",
+                        "Woke up at 6 AM to be productive. Fell back asleep at 6:01 AM. Achievement unlocked.",
+                        "My neighbors think I'm a spy. In reality, I'm just trying to find their Wi-Fi password.",
+                        "My 'Measured Future' currently measures about 2 inches of progress per year.",
+                        "Shared a 'Peaceful Green' mood while internally screaming in 'Emergency Red'.",
+                        "Gym membership: Paid. Attendance: Mythological.",
+                        "Trying to find a soulmate with the same RGB hex code. Currently 0% matched.",
+                        "I follow my dreams. Mostly because I'm always napping.",
+                        "Life is a beat, but I'm consistently off-tempo.",
+                        "Academic journey update: I’ve mastered the art of looking busy while doing absolutely nothing.",
+                        "Crypto portfolio: -90%. Mental health: +1% (because I'm too broke to care anymore).",
+                        "Trying to predict my wealth using AI. The AI just laughed and closed itself.",
+                        "Thinking about 'Who says the river is wide', then I saw my to-do list.",
+                        "The only 'PurrCircle' I have is the dark circles under my eyes.",
+                        "My code is like Jony J's lyrics—lots of philosophy, but the compiler doesn't get it.",
+                        "Wait for the 'Lilith' moon, but only found a 'Buggy' morning.",
+                        "王以太说‘目不转睛’，但我看代码看久了只想闭目养神。",
+                        "Trying to find the 'Secret' like Jay Chou, but I only found a syntax error.",
+                        "IU is singing 'Celebrity', while I'm here being a 'Non-entity'.",
+                        "Jony J said '不用排比句', but my CSS is full of repetitive tags.",
+                        "zhu ni tian tian kai xin, yong yuan xing fu!",
+                        "My life is a 'Love Poem' written in a language I don't understand.",
+                        "Jay Chou's 'Mojito', but my budget only allows for tap water.",
+                        "Searching for 'The Promised Happiness', ended up with 'The Predicted Deficit'.",
+                        "王以太在‘阿司匹林’里谈情，我在代码库里谈‘命’。",
+                        "My 'Academic Journey' is basically a 'Greatest Hits' of failed experiments.",
+                        "Tried to follow 'Palette' and be colorful, but I ended up just feeling 'Blue'.",
+                        "Jony J says '物女金', I say 'Bug-Fix-Sleep'.",
+                        "Life is like a 'Tornado', especially my room during finals week.",
+                        "My patience is thinner than IU's high notes.",
+                        "Xixi, Huhu, Haha, qqz fffff.",
+                        "Trying to be 'Unstoppable' like Wang Yitai, but my Wi-Fi says otherwise.",
+                        "Jay Chou has 'Nunchucks', I have 'Broken Keyboards'.",
+                        "My research is like a 'Lost Train'—no one knows where it's going.",
+                        "Jony J told me to 'Stay Real', but my AI keeps hallucinating.",
+                        "If life is a 'Palette', I'm the water cup after washing the brushes.",
+                        "My productivity is like a 'Shooting Star'—rare, fast, and mostly ignored.",
+                        "Jay Chou's 'Silence' is what I get when I ask for a pay raise.",
+                        "Trying to find 'Eighteen' again, but I'm stuck at 'Twenty-something' with back pain.",
+                        "My logic is like a Wang Yitai verse—soulful, but hard to follow on a Monday.",
+                        "Academic life: 10% research, 90% staring at a blank cursor.",
+                        "I told the AI to write a Jay Chou song. It just gave me a recipe for pearl milk tea.",
+                        "My 'ColorMood' today is 'Overwhelmed Grey' with a hint of 'Desperate Yellow'.",
+                        "The 'Only One' I trust is the 'Undo' button.",
+                        "Jony J: '物极必反'. Me: 'Bug极必死'.",
+                        "My code is like 'Bbibbi'—if you cross the line, I’ll report you to the compiler.",
+                        "Trying to hit the three-level high notes of 'Good Day', but my back hit the floor instead.",
+                        "IU is my 'Celebrity', but in this project, I'm just an extra in the background.",
+                        "Life is a 'Palette', but I'm still stuck in the 'Twenty-three' crisis at twenty-something.",
+                        "My productivity is like 'The Red Shoes'—it keeps running, but in the wrong direction.",
+                        "I asked the AI for a 'Love Poem', it gave me a 'Segmentation Fault'.",
+                        "Trying to be as productive as 'Lilac', but I’m more like a 'Sleepless' night.",
+                        "My bank account is 'Ending Scene'—dramatic, sad, and definitely over.",
+                        "对不起，我又偷偷想你了。",
+                        "IU sings 'Eight' for the past, I'm just here for the 'Eight' bugs I found at 8 AM.",
+                        "Looking for a 'Strawberry Moon', but all I see is the 'Blue' light of my monitor.",
+                        "My 'Academic Journey' is like 'Blueming'—lots of flowers in my head, none on the paper.",
+                        "Jony J said stay real, but IU said 'I'm fine, truly' while I'm clearly not.",
+                        "My code has more 'Through the Night' vibes than the actual song.",
+                        "Trying to find the 'Friday' feeling on a Monday morning. 404 Not Found.",
+                        "If life is 'Hotel Del Luna', I'm just the guest who forgot to check out.",
+                        "My 'ColorMood' today is 'Coin'—I'm flipping it to decide if I should work or nap.",
+                        "和好铃铛",
+                        "今天又是五号啦，今天快乐！",
+                        "mmmmmmmmmmmm",
+                        "nnnnnnnnnnnnn",
+                        "What's the best thing about Switzerland? I don't know, but the flag is a big plus.",
+                        "I hate Russian dolls. They're so full of themselves.",
+                        "Why can't a nose be 12 inches long? Because then it would be a foot.",
+                        "What do you call a snowman with a six pack? An abdominal snowman.",
+                        "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+                        "Why did the golfer bring two pairs of pants? In case he got a hole in one.",
+                        "I'm terrified of elevators, so I'm going to start taking steps to avoid them.",
+                        "What do you call a fish with no eyes? A fsh.",
+                        "I used to think I was indecisive, but now I'm not so sure.",
+                        "Why did the tomato turn red? Because it saw the salad dressing.",
+                        "What's orange and sounds like a parrot? A carrot.",
+                        "I'm friends with all my electrons. They're always so positive.",
+                        "Why don't scientists trust atoms? Because they make up everything.",
+                        "What do you call a dinosaur that crashes his car? Tyrannosaurus Wrecks.",
+                        "I want to die peacefully in my sleep, like my grandfather. Not screaming in terror like the passengers in his car.",
+                        "Why did the math book look sad? Because it had too many problems.",
+                        "What do you call a pig that knows karate? A pork chop.",
+                        "Why don't some couples go to the gym? Because some relationships don't work out.",
+                        "I'm skeptical of anyone who tells me they're a medium. If so, why do they need my name?",
+                        "What do you call a can opener that doesn't work? A can't opener.",
+                        "I wondered why the baseball was getting bigger. Then it hit me.",
+                        "Why did the stadium get hot after the game? All the fans left.",
+                        "How do you organize a space party? You planet.",
+                        "What kind of tea is hard to swallow? Reality.",
+                        "I have a split personality, said Tom, being frank.",
+                        "My boss told me to have a good day, so I went home.",
+                        "I asked my dog what's two minus two. He said nothing.",
+                        "What do you call a lazy kangaroo? A pouch potato.",
+                        "Why did the cookie go to the hospital? Because he felt crummy.",
+                        "I'm trying to lose weight, but it keeps finding me.",
+                        "What's a librarian's favorite vegetable? Quiet peas.",
+                        "Why did the skeleton go to the party alone? Because he had no body to go with.",
+                        "What do you call a fake stone in Ireland? A sham rock.",
+                        "I told my doctor I broke my arm in two places. He told me to stop going to those places.",
+                        "Why don't skeletons fight each other? They don't have the guts.",
+                        "I'm on a seafood diet. I see food and I eat it.",
+                        "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+                        "My wife told me to stop impersonating a flamingo. I had to put my foot down.",
+                        "I used to be a baker, but I couldn't make enough dough.",
+                        "Why did the scarecrow win an award? Because he was outstanding in his field.",
+                        "What do you call a fake noodle? An Impasta.",
+                        "I'm reading a book on anti-gravity. It's impossible to put down.",
+                        "Did you hear about the guy who invented the Lifesaver? They say he made a mint.",
+                        "I wasn't originally going to get a brain transplant, but then I changed my mind.",
+                        "What do you call a belt made out of watches? A waist of time.",
+                        "I used to play piano by ear, but now I use my hands.",
+                        "Why did the bicycle fall over? Because it was two-tired.",
+                        "I have a lot of jokes about unemployed people, but none of them work.",
+                        "牛逼，恭喜你开到隐藏款了，奖励是没有什么奖！！！",
+                        "My bed is a magical place where I suddenly remember everything I forgot to do.",
+                        "I’m a professional bridge burner. It helps me stay warm in the winter.",
+                        "My kitchen is for dancing. My microwave is for survival.",
+                        "I have 5 minutes of work to do, so I’ll start in 3 hours.",
+                        "My bank account is like a graveyard. Everyone knows what’s in there, but nobody wants to talk about it.",
+                        "I’m currently in a committed relationship with my bed. We’re very happy.",
+                        "My social life is like a balloon. It’s colorful, but one tiny prick and it’s gone.",
+                        "I told my mom I wanted to be a millionaire. She told me to start by cleaning my room.",
+                        "My favorite hobby is adding things to my cart and then closing the tab.",
+                        "I’m at that age where 'getting lucky' means finding my car keys on the first try.",
+                        "My life is a constant cycle of 'I need to save money' and 'Treat yourself'.",
+                        "I don't need a hair stylist. My pillow gives me a new look every morning.",
+                        "My brain: 'We should exercise.' My stomach: 'We should eat a pizza.' Guess who won.",
+                        "I’m not a morning person. I’m not even a 'day' person. I’m a 'maybe at 10 PM' person.",
+                        "My room isn't messy. It’s an obstacle course designed to keep me fit.",
+                        "I have a lot of things to do, so I’m going to take a nap first.",
+                        "My credit card is basically a magic wand that makes my problems disappear for 30 days.",
+                        "I’m not ignoring you. I’m just giving my phone a rest from our friendship.",
+                        "My diet plan: I ate a salad for lunch, so I deserve an entire cake for dinner.",
+                        "I follow my heart, but my heart always leads me to the fridge.",
+                        "My future is so bright, I have to squint just to see my bank balance.",
+                        "I’m not lazy. I’m just on energy-saving mode for the next 40 years.",
+                        "My house was clean last week. Sorry you missed it.",
+                        "I’m a 'limited edition'. There’s only one of me, and that’s probably for the best.",
+                        "I don’t trip. I do random gravity checks.",
+                        "My phone battery lasts longer than my motivation at the gym.",
+                        "I’m not lost. I’m just taking the scenic route to nowhere.",
+                        "My life is like a movie, but I’m the character who dies in the first five minutes.",
+                        "I’m not old. I’m just a classic.",
+                        "My favorite exercise is a cross between a lunge and a crunch. I call it lunch.",
+                        "I have the body of a god. Unfortunately, it’s Buddha.",
+                        "My career is like a game of Tetris. The successes disappear and the failures pile up.",
+                        "I’m in a relationship with 'Sleep', but 'Alarm Clock' keeps trying to break us up.",
+                        "My wallet is like an onion. Opening it makes me cry.",
+                        "I don't need an inspirational quote. I need a nap.",
+                        "I’m not messy. I’m 'organizationally challenged'.",
+                        "My life is a series of 'oops' and 'oh well'.",
+                        "Good morning, good afternoon, and good night!",
+                        "还是想你",
+                        "还能不能，重新编织，脑海中起毛球的记忆",
+                        "我需要你，我需要你，我需要你",
+                        "感激你 让我拥有秋天的美丽",
+                        "再说我爱你，可能雨也不会停"
+                      ]
+
+                      if (garbageBtn && garbagePopup && garbageText) {
+                        garbageBtn.addEventListener("click", function() {
+                          const randomGarbage = garbageArray[Math.floor(Math.random() * garbageArray.length)]
+                          garbageText.textContent = randomGarbage
+                          garbagePopup.classList.add("is-active")
+                          
+                          setTimeout(() => {
+                            garbagePopup.classList.remove("is-active")
+                          }, 100411)
+                        })
                       }
                     })()
                   });
