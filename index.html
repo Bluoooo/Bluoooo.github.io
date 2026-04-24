@@ -286,30 +286,19 @@
             <div class="personal-bio__container">
               <div class="personal-bio__grid">
                 <aside class="personal-bio__sidebar">
-                  <div class="personal-bio__avatar-wrapper flip-card">
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <img
-                          alt="Ziqi Stephen Zhao"
-                          src="assets/avatar.jpg"
-                          class="personal-bio__avatar"
-                        />
-                      </div>
-                      <div class="flip-card-back">
-                        <img
-                          alt="Nick"
-                          src="assets/nick.jpg"
-                          class="personal-bio__avatar"
-                        />
-                      </div>
-                    </div>
+                  <div class="personal-bio__avatar-wrapper">
+                    <img
+                      alt="Ziqi Stephen Zhao"
+                      src="assets/avatar.jpg"
+                      class="personal-bio__avatar"
+                    />
                   </div>
                   <div class="personal-bio__meta">
                     <h2 class="section-title">Stephen</h2>
                     <h2 class="section-title">Ziqi&nbsp; Zhao</h2>
                     <p class="section-content">PM, Essayist, Entrepreneur</p>
                     <div class="personal-bio__socials">
-                      <a href="files/ZIQI_CV.pdf" target="_blank">
+                      <a href="files/ziqi_cv.pdf" target="_blank">
                         <div
                           aria-label="Download CV"
                           class="personal-bio__icon-link"
@@ -854,17 +843,5 @@
         rel="canonical"
         href="https://basic-interesting-alpaca-injnxe.teleporthq.app/"
       />
-    </div>
-    <script src='https://unpkg.com/@teleporthq/teleport-custom-scripts'></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const flipCard = document.querySelector('.personal-bio__avatar-wrapper.flip-card');
-        if (flipCard) {
-          flipCard.addEventListener('click', function() {
-            this.classList.toggle('flipped');
-          });
-        }
-      });
-    </script>
   </body>
 </html>
