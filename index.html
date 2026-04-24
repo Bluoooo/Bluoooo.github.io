@@ -286,12 +286,23 @@
             <div class="personal-bio__container">
               <div class="personal-bio__grid">
                 <aside class="personal-bio__sidebar">
-                  <div class="personal-bio__avatar-wrapper">
-                    <img
-                      alt="Ziqi Stephen Zhao"
-                      src="assets/avatar.jpg"
-                      class="personal-bio__avatar"
-                    />
+                  <div class="personal-bio__avatar-wrapper flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img
+                          alt="Ziqi Stephen Zhao"
+                          src="assets/avatar.jpg"
+                          class="personal-bio__avatar"
+                        />
+                      </div>
+                      <div class="flip-card-back">
+                        <img
+                          alt="Nick"
+                          src="assets/nick.jpg"
+                          class="personal-bio__avatar"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div class="personal-bio__meta">
                     <h2 class="section-title">Stephen</h2>
@@ -844,5 +855,16 @@
         href="https://basic-interesting-alpaca-injnxe.teleporthq.app/"
       />
     </div>
+    <script src='https://unpkg.com/@teleporthq/teleport-custom-scripts'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const flipCard = document.querySelector('.flip-card');
+        if (flipCard) {
+          flipCard.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+          });
+        }
+      });
+    </script>
   </body>
 </html>
