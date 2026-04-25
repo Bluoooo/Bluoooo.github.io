@@ -60,28 +60,41 @@
       }
 
       .garbage-popup {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #a8d8ea;
-        border-radius: 8px;
-        padding: 1rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        width: 500px;
-        max-width: 90vw;
-        text-align: center;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-      }
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #a8d8ea 0%, #87ceeb 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.3);
+  width: auto;
+  max-width: 90vw;
+  min-width: 280px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 12px;
+}
+
+.garbage-popup.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-8px);
+}
 
       .garbage-text {
         margin: 0;
-        font-size: 0.9rem;
-        color: #333;
+        font-size: 1rem;
+        color: #1a3a4a;
         word-wrap: break-word;
+        font-weight: 500;
+        line-height: 1.6;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
       }
 
       .garbage-popup::after {
@@ -90,9 +103,21 @@
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
-        border-width: 8px;
+        border-width: 10px;
         border-style: solid;
         border-color: #a8d8ea transparent transparent transparent;
+        filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.1));
+      }
+      
+      .garbage-popup.right-aligned::after {
+        left: auto;
+        right: 20px;
+        transform: none;
+      }
+      
+      .garbage-popup.left-aligned::after {
+        left: 20px;
+        transform: none;
       }
 
       .garbage-popup.is-active {
@@ -660,7 +685,7 @@
           >
             <div class="selected-projects__container">
               <div class="selected-projects__header">
-                <h2 class="section-title">Portfolio Highlights</h2>
+                <h2 class="section-title">Proof of Daydreaming</h2>
               </div>
               <div class="selected-projects__bento">
                 <article
@@ -672,15 +697,15 @@
                     class="selected-projects__img"
                   />
                   <div class="selected-projects__overlay">
-                    <h3 class="section-subtitle">Coming Soon</h3>
+                    <h3 class="section-subtitle project-main-title">论小说《棋王》中的 “主客问答”手法 </h3>
                     <p class="section-content">
-                     Coming Soon lalala
+                     深夜读阿城，一拍脑门的临光一闪和随之而来的学术垃圾
                     </p>
-                    <a href="javascript:void(0);">
-                      <div class="btn-sm btn btn-accent">
-                        <span>Coming Soon</span>
-                      </div>
-                    </a>
+                    <a href="files/qiwang.pdf" target="_blank">
+                  <div class="btn-sm btn btn-accent">
+                    <span>View PDF</span>
+                  </div>
+                </a>
                   </div>
                 </article>
                 <article class="selected-projects__card">
@@ -690,7 +715,7 @@
                     class="selected-projects__img"
                   />
                   <div class="selected-projects__overlay">
-                    <h3 class="section-subtitle">Lee Ji Eun</h3>
+                    <h3 class="section-subtitle project-main-title">Lee Ji Eun</h3>
                     <p class="section-content">
                       Coming Soon.
                     </p>
@@ -703,7 +728,7 @@
                     class="selected-projects__img"
                   />
                   <div class="selected-projects__overlay">
-                    <h3 class="section-subtitle">Chengxiao</h3>
+                    <h3 class="section-subtitle project-main-title">Chengxiao</h3>
                     <p class="section-content">
                       Coming Soon
                     </p>
@@ -802,7 +827,7 @@
                           </svg>
                           <a href="mailto:hello@stephenzhao.com?subject=">
                             <div class="footer-nav-link">
-                              <span>ziqizhao@link.cuhk.edu.cn</span>
+                              <span>122090793@link.cuhk.edu.cn</span>
                             </div>
                           </a>
                         </li>
@@ -851,7 +876,7 @@
                             Last Updated
                           </h3>
                           <p class="section-content footer-newsletter-text">
-                            April 24th, 2026
+                            April 26th, 2026
                           </p>
                         </div>
                         <div class="garbage-generator">
@@ -1200,13 +1225,39 @@
                         garbageBtn.addEventListener("click", function() {
                           const randomGarbage = garbageArray[Math.floor(Math.random() * garbageArray.length)]
                           garbageText.textContent = randomGarbage
+                          
+                          // 重置样式
+                          garbagePopup.style.left = ""
+                          garbagePopup.style.right = ""
+                          garbagePopup.style.transform = ""
+                          garbagePopup.classList.remove("right-aligned", "left-aligned")
+                          
                           garbagePopup.classList.add("is-active")
                           
-                          const randomTime = Math.floor(Math.random() * (10411 - 3060 + 1)) + 5200;
-
+                          // 计算位置
                           setTimeout(() => {
-                            garbagePopup.classList.remove("is-active");
-                          }, randomTime);
+                            const btnRect = garbageBtn.getBoundingClientRect()
+                            const popupRect = garbagePopup.getBoundingClientRect()
+                            const windowWidth = window.innerWidth
+                            
+                            // 检查是否会超出右边缘
+                            if (btnRect.left + popupRect.width / 2 > windowWidth - 20) {
+                              garbagePopup.style.left = "auto"
+                              garbagePopup.style.right = "10px"
+                              garbagePopup.style.transform = "none"
+                              garbagePopup.classList.add("right-aligned")
+                            } else if (btnRect.left - popupRect.width / 2 < 20) {
+                              // 检查是否会超出左边缘
+                              garbagePopup.style.left = "10px"
+                              garbagePopup.style.right = "auto"
+                              garbagePopup.style.transform = "none"
+                              garbagePopup.classList.add("left-aligned")
+                            }
+                          }, 10)
+                          
+                          setTimeout(() => {
+                            garbagePopup.classList.remove("is-active")
+                          }, 10411)
                         })
                       }
                     })()

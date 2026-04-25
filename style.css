@@ -678,6 +678,11 @@
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-heading);
 }
+
+.project-main-title {
+  font-size: var(--font-size-3xl);
+  opacity: 0.85;
+}
  
 .section-content {
   font-size: var(--font-size-base);
