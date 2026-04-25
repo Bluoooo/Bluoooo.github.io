@@ -142,7 +142,8 @@
 }
 
 .selected-projects-wrapper {
-  display: contents;
+  display: block;
+  width: 100%;
 }
  
 .selected-projects-thq-selected-projects-elm {
@@ -335,4 +336,32 @@
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+}
+
+/* 玫瑰花卡片特殊样式 */
+#rose-card {
+  border: 0px solid color-mix(in oklab, var(--color-surface) 92%, var(--color-secondary));
+  box-sizing: border-box;
+  transition: border-color 0.4s ease;
+}
+
+#rose-card:hover {
+  border-color: transparent;
+}
+
+#rose-card .rose-card-mask {
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in oklab, var(--color-surface) 92%, var(--color-secondary));
+  opacity: 0.99;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+#rose-card:hover .rose-card-mask {
+  opacity: 0;
+}
+
+#rose-card .selected-projects__overlay {
+  z-index: 2;
 }
