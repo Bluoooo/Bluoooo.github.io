@@ -67,6 +67,15 @@
  
 .skills-approach-thq-skills-approach-elm {
   position: relative;
+  width: 100% !important;
+}
+
+/* 确保容器也是响应式的 */
+.skills-approach__container {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
  
 .skills-approach-thq-section-title-elm {
@@ -74,10 +83,11 @@
 }
  
 .skills-approach-thq-skills-approachcell-elm1 {
-  width: 100%;
-  max-width: 1112px;
-  min-height: 194px;
-  height: auto;
+  width: 100% !important;
+  max-width: 1112px !important;
+  min-height: 194px !important;
+  height: auto !important;
+  box-sizing: border-box !important;
 }
 
 .skills-approach-thq-section-subtitle-elm1 {
@@ -86,11 +96,12 @@
 }
 
 .skills-approach-thq-skills-approachcell-elm2 {
-  width: 100%;
-  max-width: 1112px;
-  min-height: 194px;
-  height: auto;
+  width: 100% !important;
+  max-width: 1112px !important;
+  min-height: 194px !important;
+  height: auto !important;
   margin-top: var(--spacing-xl);
+  box-sizing: border-box !important;
 }
 
 .skills-approach-thq-section-subtitle-elm2 {
@@ -102,12 +113,13 @@
 }
 
 .skills-approach-thq-skills-approachcell-elm3 {
-  width: 100%;
-  max-width: 1112px;
-  min-height: 232px;
-  height: auto;
+  width: 100% !important;
+  max-width: 1112px !important;
+  min-height: 232px !important;
+  height: auto !important;
   background: var(--color-secondary);
   margin-top: var(--spacing-xl);
+  box-sizing: border-box !important;
 }
 
 .skills-approach-thq-section-subtitle-elm3 {
@@ -119,12 +131,35 @@
 }
 
 .skills-approach-thq-skills-approachcell-elm4 {
-  width: 100%;
-  max-width: 1112px;
-  min-height: 306px;
-  height: auto;
+  width: 100% !important;
+  max-width: 1112px !important;
+  min-height: 306px !important;
+  height: auto !important;
   background: var(--color-on-surface-secondary);
   margin-top: var(--spacing-xl);
+  box-sizing: border-box !important;
+}
+
+/* 响应式媒体查询 - 针对小屏幕设备 */
+@media (max-width: 768px) {
+  .skills-approach-thq-skills-approachcell-elm1,
+  .skills-approach-thq-skills-approachcell-elm2,
+  .skills-approach-thq-skills-approachcell-elm3,
+  .skills-approach-thq-skills-approachcell-elm4 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-approach-thq-skills-approachcell-elm1,
+  .skills-approach-thq-skills-approachcell-elm2,
+  .skills-approach-thq-skills-approachcell-elm3,
+  .skills-approach-thq-skills-approachcell-elm4 {
+    padding: var(--spacing-lg) !important;
+  }
 }
 
 .skills-approach-thq-section-subtitle-elm4 {
