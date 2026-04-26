@@ -340,28 +340,44 @@
 
 /* 玫瑰花卡片特殊样式 */
 #rose-card {
-  border: 0px solid color-mix(in oklab, var(--color-surface) 92%, var(--color-secondary));
+  border: 1px solid color-mix(in oklab, var(--color-surface) 92%, var(--color-secondary));
   box-sizing: border-box;
-  transition: border-color 0.4s ease;
+  transition: border-color 0.8s ease, background-size 0.6s ease;
+  cursor: pointer;
+  background-size: cover;
 }
 
-#rose-card:hover {
+#rose-card.is-activated {
   border-color: transparent;
+}
+
+#rose-card.is-activated:hover {
+  background-size: 108% 108%;
 }
 
 #rose-card .rose-card-mask {
   position: absolute;
   inset: 0;
   background-color: color-mix(in oklab, var(--color-surface) 92%, var(--color-secondary));
-  opacity: 0.99;
+  opacity: 0.95;
   z-index: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.8s ease;
 }
 
-#rose-card:hover .rose-card-mask {
+#rose-card.is-activated .rose-card-mask {
   opacity: 0;
 }
 
 #rose-card .selected-projects__overlay {
   z-index: 2;
+  opacity: 0;
+  transition: opacity 0.8s ease 0.2s;
+}
+
+#rose-card.is-activated .selected-projects__overlay {
+  opacity: 0;
+}
+
+#rose-card.is-activated:hover .selected-projects__overlay {
+  opacity: 1;
 }

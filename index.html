@@ -739,7 +739,7 @@
                   <div class="rose-card-mask"></div>
                   <div class="selected-projects__overlay">
                     <p class="section-content">
-                      A Story not fun
+                      a story should about us
                     </p>
                     <div style="margin-top: 1rem;"></div>
                     <a href="files/itisus.pdf" target="_blank">
@@ -1273,6 +1273,29 @@
                           setTimeout(() => {
                             garbagePopup.classList.remove("is-active")
                           }, 10411)
+                        })
+                      }
+                    })()
+                  });
+                </script>
+                <script defer="" data-name="rose-card-activation">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const roseCard = document.getElementById("rose-card")
+                      
+                      if (roseCard) {
+                        roseCard.addEventListener("click", function(e) {
+                          if (!roseCard.classList.contains("is-activated")) {
+                            roseCard.classList.add("is-activated")
+                            // 激活后，让按钮可以正常点击
+                            roseCard.style.cursor = "default"
+                          } else {
+                            // 激活后，如果点击的是按钮链接，不阻止默认行为
+                            const target = e.target
+                            if (target.tagName === "A" || target.closest("a")) {
+                              return // 让链接正常跳转
+                            }
+                          }
                         })
                       }
                     })()
