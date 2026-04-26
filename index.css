@@ -359,7 +359,7 @@
   position: absolute;
   inset: 0;
   background-color: color-mix(in oklab, var(--color-surface) 92%, var(--color-secondary));
-  opacity: 0.95;
+  opacity: 0.965;
   z-index: 1;
   transition: opacity 0.8s ease;
 }
