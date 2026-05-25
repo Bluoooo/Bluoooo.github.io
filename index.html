@@ -914,7 +914,7 @@
                             Last Updated
                           </h3>
                           <p class="section-content footer-newsletter-text">
-                            May 13th, 2026
+                            May 25th, 2026
                           </p>
                         </div>
                         <div class="garbage-generator">
@@ -1345,5 +1345,137 @@
         rel="canonical"
         href="https://basic-interesting-alpaca-injnxe.teleporthq.app/"
       />
+      <script defer="" data-name="five-minute-confetti">
+        document.addEventListener('DOMContentLoaded', function() {
+          (function(){
+            const CONFETTI_DELAY = 3 * 60 * 1000; // 3 minutes
+
+            // Pink-blue color palette for confetti
+            const COLORS = [
+              '#6bafe6', // primary blue
+              '#e78fb0', // secondary pink
+              '#8ec5fc', // light blue
+              '#f5d1e0', // light pink
+              '#a8d8ea', // soft blue
+              '#d84a92', // accent pink
+              '#c8e2f7', // pale blue
+              '#f0a6c4', // medium pink
+              '#ffffff', // white
+            ];
+
+            const SHAPES = ['rect', 'circle', 'ribbon'];
+
+            let confettiCounter = 0;
+
+            function createConfettiPiece() {
+              const el = document.createElement('div');
+              const shape = SHAPES[Math.floor(Math.random() * SHAPES.length)];
+              const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+              const size = 6 + Math.random() * 8;
+              const startX = Math.random() * window.innerWidth;
+              const duration = 3000 + Math.random() * 4000;
+              const delay = Math.random() * 2000;
+              const drift = (Math.random() - 0.5) * 200;
+              const rotation = Math.random() * 720 - 360;
+
+              // Generate unique name once to avoid Date.now() mismatch
+              const kfName = 'confettiFall_' + (++confettiCounter) + '_' + Math.random().toString(36).slice(2, 8);
+
+              el.style.cssText = `
+                position: fixed;
+                top: -20px;
+                left: ${startX}px;
+                width: ${shape === 'ribbon' ? size * 0.4 : size}px;
+                height: ${shape === 'ribbon' ? size * 2.5 : size}px;
+                background: ${color};
+                border-radius: ${shape === 'circle' ? '50%' : shape === 'ribbon' ? '2px' : '1px'};
+                opacity: 0.9;
+                z-index: 99999;
+                pointer-events: none;
+                animation: ${kfName} ${duration}ms ease-in ${delay}ms forwards;
+              `;
+
+              const style = document.createElement('style');
+              style.textContent = `
+                @keyframes ${kfName} {
+                  0% {
+                    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+                    opacity: 0.9;
+                  }
+                  20% {
+                    opacity: 1;
+                  }
+                  100% {
+                    transform: translateY(${window.innerHeight + 40}px) translateX(${drift}px) rotate(${rotation}deg) scale(0.5);
+                    opacity: 0;
+                  }
+                }
+              `;
+              document.head.appendChild(style);
+              document.body.appendChild(el);
+
+              setTimeout(() => {
+                el.remove();
+                style.remove();
+              }, duration + delay + 100);
+            }
+
+            function launchConfetti() {
+              // Create a notification toast
+              const toast = document.createElement('div');
+              toast.style.cssText = `
+                position: fixed;
+                top: 24px;
+                left: 50%;
+                transform: translateX(-50%) translateY(-20px);
+                background: linear-gradient(135deg, #e78fb0, #6bafe6);
+                color: white;
+                padding: 14px 28px;
+                border-radius: 999px;
+                font-family: "Fredoka", system-ui, sans-serif;
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 0 8px 32px rgba(231,143,176,0.4);
+                z-index: 100000;
+                opacity: 0;
+                transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+                pointer-events: none;
+                text-align: center;
+                letter-spacing: 0.02em;
+              `;
+              toast.textContent = 'You\'ve been here for 3 minutes! Thanks for staying ~';
+              document.body.appendChild(toast);
+
+              requestAnimationFrame(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateX(-50%) translateY(0)';
+              });
+
+              setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(-50%) translateY(-20px)';
+                setTimeout(() => toast.remove(), 600);
+              }, 5000);
+
+              // Burst confetti in waves
+              const totalPieces = 120;
+              const waves = 4;
+              for (let w = 0; w < waves; w++) {
+                setTimeout(() => {
+                  for (let i = 0; i < totalPieces / waves; i++) {
+                    setTimeout(() => createConfettiPiece(), i * 30);
+                  }
+                }, w * 400);
+              }
+            }
+
+            // Start the timer
+            setTimeout(launchConfetti, CONFETTI_DELAY);
+
+            // Also log a message for curious developers
+            console.log('%c⏱ Confetti timer started! Stay for 5 minutes for a surprise...', 'color: #e78fb0; font-size: 14px; font-weight: bold;');
+          })();
+        });
+      </script>
   </body>
 </html>
