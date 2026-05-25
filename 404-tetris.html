@@ -251,6 +251,7 @@
       }
 
       function drawNextPiece() {
+        nextCtx.clearRect(0, 0, nextCanvas.width, nextCanvas.height);
         nextCtx.fillStyle = 'rgba(255,255,255,0.3)';
         nextCtx.fillRect(0, 0, 80, 80);
         if (!nextPiece) return;
