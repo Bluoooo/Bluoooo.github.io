@@ -1,2 +1,2 @@
-# ziqizhao.github.io
+# ziqizhao.com
 My personal website
