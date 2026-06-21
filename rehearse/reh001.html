@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>Rehearse·001 - Rehearse</title>
+    <meta property="og:title" content="Rehearse·001 - Rehearse" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <style data-tag="reset-style-sheet">
+      html { line-height: 1.15; } body { margin: 0; } * { box-sizing: border-box; border-width: 0; border-style: solid; -webkit-font-smoothing: antialiased; } p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption { margin: 0; padding: 0; } button { background-color: transparent; } button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; } button, select { text-transform: none; } button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; color: inherit; } a { color: inherit; text-decoration: inherit; } pre { white-space: normal; } input { padding: 2px 4px; } img { display: block; } details { display: block; margin: 0; padding: 0; } summary::-webkit-details-marker { display: none; } html { scroll-behavior: smooth; }
+    </style>
+    <style data-tag="default-style-sheet">
+      html { font-family: Inter; font-size: 1rem; }
+      body { font-weight: 400; font-style: normal; letter-spacing: 0.02em; line-height: 1.6; color: var(--color-on-surface); background: var(--color-surface); fill: var(--color-on-surface); }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" data-tag="font" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='favicon-gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%236bafe6'/><stop offset='100%25' stop-color='%23e78fb0'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23favicon-gradient)'/><text x='50' y='60' font-size='40' text-anchor='middle' fill='white' font-family='Inter, sans-serif' font-weight='700'>ZZ</text></svg>">
+    <style>
+      .prose p {
+        margin-bottom: 1.2em;
+        font-size: 1.05rem;
+        line-height: 2;
+        color: var(--color-on-surface);
+        font-family: "Noto Serif SC", "STIX Two Text", serif;
+      }
+      .prose p.dialogue {
+        text-indent: 0;
+        padding-left: 1em;
+      }
+      .prose p.dialogue::before {
+        content: "——";
+        margin-right: 0.3em;
+        opacity: 0.4;
+      }
+      .prose .break {
+        text-align: center;
+        letter-spacing: 1em;
+        color: var(--color-on-surface-secondary);
+        opacity: 0.4;
+        margin: 2em 0;
+        font-size: 0.9rem;
+      }
+      .prose .ending {
+        margin-top: 3em;
+        padding-top: 2em;
+        border-top: 1px solid var(--color-border);
+        font-style: italic;
+        color: var(--color-on-surface-secondary);
+        font-size: 0.95rem;
+        line-height: 2;
+        font-family: "Noto Serif SC", "STIX Two Text", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <div class="rehearse-container">
+
+      <!-- Navigation -->
+      <navigation-wrapper class="navigation-wrapper">
+        <div id="Navigation" class="navigation-container1">
+          <nav class="navigation-container">
+            <div class="navigation-content">
+              <a href="../">
+                <div class="navigation-brand">
+                  <span class="section-title">ZIQIZHAO.COM</span>
+                </div>
+              </a>
+              <div class="navigation-desktop-menu">
+                <a href="../">
+                  <div class="navigation-link"><span>About Me</span></div>
+                </a>
+                <a href="../academic">
+                  <div class="navigation-link"><span>Academic</span></div>
+                </a>
+                <a href="../business">
+                  <div class="navigation-link"><span>Business</span></div>
+                </a>
+                <a href="../rehearse">
+                  <div class="navigation-link navigation-link-blog"><span>Rehearse</span></div>
+                </a>
+              </div>
+              <button id="navToggle" aria-label="Toggle Menu" aria-expanded="false" class="navigation-toggle">
+                <svg fill="none" width="24" xmlns="http://www.w3.org/2000/svg" height="24" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navigation-icon-menu">
+                  <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </nav>
+          <div id="mobileOverlay" class="navigation-mobile-overlay">
+            <div class="navigation-overlay-header">
+              <a href="../">
+                <div class="navigation-brand">
+                  <span class="section-title">ZIQIZHAO.COM</span>
+                </div>
+              </a>
+              <button id="navClose" aria-label="Close Menu" class="navigation-close">
+                <svg fill="none" width="24" xmlns="http://www.w3.org/2000/svg" height="24" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navigation-icon-close">
+                  <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="navigation-overlay-links">
+              <a href="../">
+                <div class="navigation-overlay-link"><span>About Me</span></div>
+              </a>
+              <a href="../academic">
+                <div class="navigation-overlay-link"><span>Academic</span></div>
+              </a>
+              <a href="../business">
+                <div class="navigation-overlay-link"><span>Business</span></div>
+              </a>
+              <a href="../rehearse">
+                <div class="navigation-overlay-link"><span>Rehearse</span></div>
+              </a>
+            </div>
+            <div class="navigation-overlay-footer">
+              <p class="section-content">Ziqi "Stephen" Zhao</p>
+              <div class="navigation-social-minimal">
+                <span class="section-content">Personal Portfolio 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="navigation-container2"><div class="navigation-container3"></div></div>
+          <div class="navigation-container4"><div class="navigation-container5"></div></div>
+        </div>
+      </navigation-wrapper>
+
+      <!-- Article Hero -->
+      <section class="rehearse-article-hero">
+        <div class="rehearse-article-hero-content">
+          <h1>Rehearse·001</h1>
+          <div class="rehearse-article-meta">
+            <span>Jun 21, 2026</span>
+            <span>&middot;</span>
+            <span>Rehearse #01</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Body -->
+      <div class="rehearse-article-body">
+        <a href="../rehearse" class="rehearse-back">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to Rehearse
+        </a>
+
+        <div class="prose">
+          <p>晴天，中午，你的新家。</p>
+
+          <p>我在心里干笑两声，你叫我的时候可没说，她也会来。</p>
+
+          <p>所以虽然人多很热闹，但是我好尴尬。</p>
+
+          <p>沉默了良久，我说，要不我下楼买点奶茶吧。</p>
+
+          <p>其实可以点外卖，我只是想逃。</p>
+
+          <p>她说，看了看我说，我和你一起。</p>
+
+          <p>电梯门缓缓关上。</p>
+
+          <p>突然从变成两个人，空气都变得奇怪起来。</p>
+
+          <p>六月的太阳有些大，小区里刚修剪过草坪，有种晒热后的植物味道，风吹过来暖暖的。</p>
+
+          <p>我们并排走着，谁都没说话。</p>
+
+          <p>以前明明有那么多话。</p>
+
+          <p>从今晚什么到未来去哪里，从凌晨两点的 nn 到第二天早上的 mm，现在却连第一句话都不知道怎么开口。</p>
+
+          <p>最后还是她先笑了笑。</p>
+
+          <p>"好久不见。"</p>
+
+          <p>我愣了一下。</p>
+
+          <p>然后也笑。</p>
+
+          <p>"好久不见。"</p>
+
+          <p>像两个刚认识的人。</p>
+
+          <p>又像两个认识了很久很久的人。</p>
+
+          <p>她突然伸出手。</p>
+
+          <p>"正式一点？"</p>
+
+          <p>我看着那只手，牵过，也放开过。</p>
+
+          <p>然后我也伸出手。</p>
+
+          <p>"别来无恙。"</p>
+
+          <p>她握住我的手，很轻，很礼貌，一触即分。</p>
+
+          <p>"别来无恙。"</p>
+
+          <p>风吹过来。</p>
+
+          <p>树叶沙沙响。</p>
+
+          <p>我想起来一些事情，但有些事情，想多了容易难过。</p>
+
+          <p>奶茶就在前面，我们点单，结账。</p>
+
+          <p>结账的时候，她看着我笑。</p>
+
+          <p>"你还喝这个啊。"</p>
+
+          <p>"这个……好喝。"</p>
+
+          <p>"还是和以前一样。"</p>
+
+          <p>我本来想说你也是。</p>
+
+          <p>话到嘴边又咽了回去。</p>
+
+          <p>走出奶茶店的时候，太阳更亮了一点。</p>
+
+          <p>她忽然停下来，然后很自然地张开双手。</p>
+
+          <p>我愣住。</p>
+
+          <p>"干嘛？"</p>
+
+          <p>她笑。</p>
+
+          <p>"朋友见面不是都会抱一下吗。"</p>
+
+          <p>我说。</p>
+
+          <p>"我们还能……算朋友吗。"</p>
+
+          <p>她愣了一秒，然后低头笑了。</p>
+
+          <p>"你这人还是这么烦。"</p>
+
+          <p>说完还是轻轻抱了我一下。</p>
+
+          <p>很短。</p>
+
+          <p>短到我甚至来不及想什么。</p>
+
+          <p>其实还是想了点什么的。</p>
+
+          <p>我的嘴唇，轻轻碰上了她的脸颊。</p>
+
+          <p>"你现在怎么可以亲我？"</p>
+
+          <p>她笑得不行。</p>
+
+          <p>"脸颊也算啊？"</p>
+
+          <p>"算。"</p>
+
+          <p>"那……报警吧。"</p>
+
+          <p>"……"</p>
+
+          <p>她好像被无语到了，然后我们俩一起突然就笑了出来。</p>
+
+          <p>好像这一整个下午第一次真的笑出来。</p>
+
+          <div class="break">* * *</div>
+
+          <p>然后我们慢慢往回走。</p>
+
+          <p>谁也没再提以前。</p>
+
+          <p>没有问后来为什么。</p>
+
+          <p>没有问有没有遗憾。</p>
+
+          <p>没有问有没有想过对方。</p>
+
+          <p>那些问题就像夏天路边晒化的冰块，明明存在过，却已经融进地面里了。</p>
+
+          <div class="break">* * *</div>
+
+          <p>回到家，门打开，大家还在聊天，好像什么都没发生。</p>
+
+          <p>我把奶茶放到桌上，她帮着忙递给别人。</p>
+
+          <p>然后我们各自坐到房间另一边，偶尔会互相看上一眼。</p>
+
+          <p>隔着几个人。</p>
+
+          <p>隔着一整个下午。</p>
+
+          <p>隔着很多很多年。</p>
+
+          <div class="break">* * *</div>
+
+          <p>傍晚的时候，天色慢慢暗下来。</p>
+
+          <p>大家开始收拾东西。</p>
+
+          <p>有人打车。</p>
+
+          <p>有人赶地铁。</p>
+
+          <p>她站在门口。</p>
+
+          <p>我也站在门口。</p>
+
+          <p>我看她。</p>
+
+          <p>她也看我。</p>
+
+          <p>眼神像水，淡淡的。</p>
+
+          <p>不像告别，也不像重逢，就只是单单的看着。</p>
+
+          <p>然后她挥挥手。</p>
+
+          <p>"走啦。"</p>
+
+          <p>"嗯。"</p>
+
+          <p>"路上注意安全。"</p>
+
+          <p>"你也是。"</p>
+
+          <p>电梯门关上。</p>
+
+          <p>数字一点一点往下跳。</p>
+
+          <p>我站在原地。</p>
+
+          <p>突然想起很久以前，那天，她也是这样和我说。</p>
+
+          <p>就这样安静的</p>
+
+          <p>告别我们吧。</p>
+
+          <p>然后我说。</p>
+
+          <p>"好哦"</p>
+
+          <div class="ending">
+            <p>小时候总以为告别是个盛大的场景，到现在才发现一切都是这么的安静简单啊。</p>
+            <p>如果真的有一天，相逢在哪里哪里的街头，不知道是谁能有勇气，先说出那句，"别来无恙"。</p>
+          </div>
+        </div>
+
+        <p style="margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--color-border); color: var(--color-on-surface-secondary); font-size: 0.9rem; font-style: italic;">
+          Written by Ziqi Zhao &middot; Originally published Jun 21, 2026
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <footer class="rehearse-footer">
+        <div class="footer-content">
+          <div class="footer-brand-row">
+            <span class="footer-logo-text">ZIQIZHAO.COM</span>
+          </div>
+          <a href="../" class="btn btn-outline">Back to Home</a>
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.getElementById("navToggle");
+        var navClose = document.getElementById("navClose");
+        var mobileOverlay = document.getElementById("mobileOverlay");
+        var overlayLinks = document.querySelectorAll(".navigation-overlay-link");
+
+        var openMenu = function() {
+          mobileOverlay.classList.add("is-active");
+          navToggle.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+        };
+        var closeMenu = function() {
+          mobileOverlay.classList.remove("is-active");
+          navToggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        };
+
+        navToggle.addEventListener("click", openMenu);
+        navClose.addEventListener("click", closeMenu);
+        overlayLinks.forEach(function(link) { link.addEventListener("click", closeMenu); });
+        window.addEventListener("keydown", function(e) {
+          if (e.key === "Escape" && mobileOverlay.classList.contains("is-active")) closeMenu();
+        });
+
+        var nav = document.querySelector(".navigation-container");
+        window.addEventListener("scroll", function() {
+          nav.style.boxShadow = window.pageYOffset > 50 ? "0 4px 20px rgba(0, 0, 0, 0.05)" : "none";
+        });
+      });
+    </script>
+  </body>
+</html>
