@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>那些爱而不得 - Rehearse</title>
+    <meta property="og:title" content="那些爱而不得 - Rehearse" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <style data-tag="reset-style-sheet">
+      html { line-height: 1.15; } body { margin: 0; } * { box-sizing: border-box; border-width: 0; border-style: solid; -webkit-font-smoothing: antialiased; } p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption { margin: 0; padding: 0; } button { background-color: transparent; } button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; } button, select { text-transform: none; } button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; color: inherit; } a { color: inherit; text-decoration: inherit; } pre { white-space: normal; } input { padding: 2px 4px; } img { display: block; } details { display: block; margin: 0; padding: 0; } summary::-webkit-details-marker { display: none; } html { scroll-behavior: smooth; }
+    </style>
+    <style data-tag="default-style-sheet">
+      html { font-family: Inter; font-size: 1rem; }
+      body { font-weight: 400; font-style: normal; letter-spacing: 0.02em; line-height: 1.6; color: var(--color-on-surface); background: var(--color-surface); fill: var(--color-on-surface); }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" data-tag="font" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='favicon-gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%236bafe6'/><stop offset='100%25' stop-color='%23e78fb0'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23favicon-gradient)'/><text x='50' y='60' font-size='40' text-anchor='middle' fill='white' font-family='Inter, sans-serif' font-weight='700'>ZZ</text></svg>">
+  </head>
+  <body>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <div class="rehearse-container">
+
+      <!-- Navigation -->
+      <navigation-wrapper class="navigation-wrapper">
+        <div id="Navigation" class="navigation-container1">
+          <nav class="navigation-container">
+            <div class="navigation-content">
+              <a href="../index.html">
+                <div class="navigation-brand">
+                  <span class="section-title">ZIQIZHAO.COM</span>
+                </div>
+              </a>
+              <div class="navigation-desktop-menu">
+                <a href="../index.html">
+                  <div class="navigation-link"><span>About Me</span></div>
+                </a>
+                <a href="../academic.html">
+                  <div class="navigation-link"><span>Academic</span></div>
+                </a>
+                <a href="../business.html">
+                  <div class="navigation-link"><span>Business</span></div>
+                </a>
+                <a href="../rehearse/">
+                  <div class="navigation-link navigation-link-blog"><span>Rehearse</span></div>
+                </a>
+              </div>
+              <button id="navToggle" aria-label="Toggle Menu" aria-expanded="false" class="navigation-toggle">
+                <svg fill="none" width="24" xmlns="http://www.w3.org/2000/svg" height="24" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navigation-icon-menu">
+                  <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </nav>
+          <div id="mobileOverlay" class="navigation-mobile-overlay">
+            <div class="navigation-overlay-header">
+              <a href="../index.html">
+                <div class="navigation-brand">
+                  <span class="section-title">ZIQIZHAO.COM</span>
+                </div>
+              </a>
+              <button id="navClose" aria-label="Close Menu" class="navigation-close">
+                <svg fill="none" width="24" xmlns="http://www.w3.org/2000/svg" height="24" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navigation-icon-close">
+                  <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="navigation-overlay-links">
+              <a href="../index.html">
+                <div class="navigation-overlay-link"><span>About Me</span></div>
+              </a>
+              <a href="../academic.html">
+                <div class="navigation-overlay-link"><span>Academic</span></div>
+              </a>
+              <a href="../business.html">
+                <div class="navigation-overlay-link"><span>Business</span></div>
+              </a>
+              <a href="../rehearse/">
+                <div class="navigation-overlay-link"><span>Rehearse</span></div>
+              </a>
+            </div>
+            <div class="navigation-overlay-footer">
+              <p class="section-content">Ziqi "Stephen" Zhao</p>
+              <div class="navigation-social-minimal">
+                <span class="section-content">Personal Portfolio 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="navigation-container2"><div class="navigation-container3"></div></div>
+          <div class="navigation-container4"><div class="navigation-container5"></div></div>
+        </div>
+      </navigation-wrapper>
+
+      <!-- Article Hero -->
+      <section class="rehearse-article-hero">
+        <div class="rehearse-article-hero-content">
+          <h1>那些爱而不得</h1>
+          <div class="rehearse-article-meta">
+            <span>May 9, 2026</span>
+            <span>&middot;</span>
+            <span>Rehearse #02</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Body -->
+      <div class="rehearse-article-body">
+        <a href="../rehearse/" class="rehearse-back">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to Rehearse
+        </a>
+
+        <p>那双最喜欢的匡威，鞋带现在却解不开。</p>
+
+        <p>后来发现，解不开的好像不是鞋带。鞋子放久了总会落灰，照片也会泛黄，可有些感情却像打了死结一样留在那里。原来爱而不得最遗憾的地方，不是没能拥有，而是故事早就翻篇了，心里的那个结却一直没有学会松开。</p>
+
+        <blockquote>
+          "那双最喜欢的匡威，鞋带现在却解不开。"——李荣浩《恋人》
+        </blockquote>
+
+        <hr style="margin: 2em 0; border: none; border-top: 1px solid var(--color-border);">
+
+        <p>I only call you when it's half past five, the only time that I'll be by your side.</p>
+
+        <p>有人说凌晨五点半是梦最深的时候。白天的时候，我们都很擅长克制和告别；只有在梦里，思念才会绕过所有防线。所以不是我只在五点半想起你，而是只有在那个快要醒来的时刻，你才有机会短暂的留在我的身边。</p>
+
+        <blockquote>
+          "I only call you when it's half past five, the only time that I'll be by your side."——The Weeknd《The Hills》
+        </blockquote>
+
+        <hr style="margin: 2em 0; border: none; border-top: 1px solid var(--color-border);">
+
+        <p>七岁的那一年，抓住那只蝉，以为能抓住夏天。</p>
+
+        <p>它的下一句叫"十七岁的那年，吻过她的脸，就以为可以和她永远"。</p>
+
+        <blockquote>
+          "七岁的那一年，抓住那只蝉，以为能抓住夏天" ——五月天《如烟》
+        </blockquote>
+
+        <hr style="margin: 2em 0; border: none; border-top: 1px solid var(--color-border);">
+
+        <p>无人的斑马线，夜空繁星点点，你说看到流星就要懂得许下心愿。</p>
+
+        <p>很多年后，我想她该忘了已经记不清那晚有没有流星了。可我依然记得，有个人认真地告诉我，看到流星要记得许愿。我的愿望从来和流行没有关系，而是和你。</p>
+
+        <blockquote>
+          "无人的斑马线，夜空繁星点点，你说看到流星就要懂得许下心愿"——汪苏泷《我想念》
+        </blockquote>
+
+        <hr style="margin: 2em 0; border: none; border-top: 1px solid var(--color-border);">
+
+        <p>road shimmer, wiggling the vision, heat heat wave, I am swimming in the river.</p>
+
+        <p>再热的天气也不会让时间变得扭曲。当某种情绪太强烈的时候，现实会开始失真。你站在路上，却像沉进水里，所有东西都在晃动、变形、发烫，而这种情绪，可能就叫爱而不得。</p>
+
+        <blockquote>
+          "road shimmer, wiggling the vision, heat heat wave, I am swimming in the river"——Glass Animals《Heat Waves》
+        </blockquote>
+
+        <p style="margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--color-border); color: var(--color-on-surface-secondary); font-size: 0.9rem; font-style: italic;">
+          Written by Ziqi Zhao &middot; Originally published May 9, 2026
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <footer class="rehearse-footer">
+        <div class="footer-content">
+          <div class="footer-brand-row">
+            <span class="footer-logo-text">ZIQIZHAO.COM</span>
+          </div>
+          <a href="../index.html" class="btn btn-outline">Back to Home</a>
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var navToggle = document.getElementById("navToggle");
+        var navClose = document.getElementById("navClose");
+        var mobileOverlay = document.getElementById("mobileOverlay");
+        var overlayLinks = document.querySelectorAll(".navigation-overlay-link");
+
+        var openMenu = function() {
+          mobileOverlay.classList.add("is-active");
+          navToggle.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+        };
+        var closeMenu = function() {
+          mobileOverlay.classList.remove("is-active");
+          navToggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        };
+
+        navToggle.addEventListener("click", openMenu);
+        navClose.addEventListener("click", closeMenu);
+        overlayLinks.forEach(function(link) { link.addEventListener("click", closeMenu); });
+        window.addEventListener("keydown", function(e) {
+          if (e.key === "Escape" && mobileOverlay.classList.contains("is-active")) closeMenu();
+        });
+
+        var nav = document.querySelector(".navigation-container");
+        window.addEventListener("scroll", function() {
+          nav.style.boxShadow = window.pageYOffset > 50 ? "0 4px 20px rgba(0, 0, 0, 0.05)" : "none";
+        });
+      });
+    </script>
+  </body>
+</html>
